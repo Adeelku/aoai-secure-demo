@@ -16,7 +16,7 @@
             ]
         }
     },
-    "postCreateCommand": "",
+    "postCreateCommand": "pip install -r requirements.txt",
     "remoteUser": "vscode",
     "hostRequirements": {
         "memory": "8gb"
