@@ -1,0 +1,23 @@
+{
+    "name": "aoai-secure-demo",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12-bullseye",
+    "features": {
+        "ghcr.io/azure/azure-dev/azd:latest": {},
+        "ghcr.io/devcontainers/features/azure-cli:1.2.4": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.azure-dev",
+                "ms-azuretools.vscode-bicep",
+                "ms-python.python",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+    "postCreateCommand": "",
+    "remoteUser": "vscode",
+    "hostRequirements": {
+        "memory": "8gb"
+    }
+}

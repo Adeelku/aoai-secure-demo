@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: aoai-secure-demo
+metadata:
+  template: 
+pipeline:
+  variables:
+    - OPENAI_HOST
+    - AZURE_OPENAI_SERVICE
+    - AZURE_OPENAI_RESOURCE_GROUP
+    - OPENAI_ORGANIZATION
+  secrets:
+    - OPENAI_API_KEY
+
+services:
+  func:
+    project: ./app
+    host: function
+    language: python
+
+
+hooks:
+    postprovision:
+      posix:
+        shell: sh
+        run: azd env get-values > .env 
+        interactive: true
+        continueOnError: false
